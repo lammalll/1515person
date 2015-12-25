@@ -40,11 +40,11 @@ public class Thread implements java.io.Serializable {
 	private Character isCream;
 	private Character isHide;
 	private Character topped;
-	private Set<Report> reports = new HashSet<Report>(0);
-	private Set<ThreadTag> threadTags = new HashSet<ThreadTag>(0);
-	private Set<ForumPicture> forumPictures = new HashSet<ForumPicture>(0);
-	private Set<Board> boards = new HashSet<Board>(0);
-	private Set<Reply> replies = new HashSet<Reply>(0);
+//	private Set<Report> reports = new HashSet<Report>(0);
+//	private Set<ThreadTag> threadTags = new HashSet<ThreadTag>(0);
+//	private Set<ForumPicture> forumPictures = new HashSet<ForumPicture>(0);
+//	private Set<Board> boards = new HashSet<Board>(0);
+//	private Set<Reply> replies = new HashSet<Reply>(0);
 
 	
 	@Override

@@ -18,19 +18,19 @@ public class ReplyService {
 	@Autowired
 	private ReplyDao replyDao;
 	
-	@Transactional
-	public int createReply(Set<ForumPicture> forumPictures , tw.com.softleader.e5e5.entity.Thread thread ,String title){
-//		Reply reply = new Reply(id, forumPicture, thread, createdDate, 
-//				title, replyContent, floor, boards, reports)
-		Reply reply = new Reply();
-		reply.setForumPictures(forumPictures);
-		reply.setThread(thread);
-		reply.setTitle(title);
-		reply.setCreatedDate(new java.util.Date());
-		reply.setFloor(reply.getFloor()+1);
-		replyDao.save(reply);
-		return 1;
-	}
+//	@Transactional
+//	public int createReply(Set<ForumPicture> forumPictures , tw.com.softleader.e5e5.entity.Thread thread ,String title){
+////		Reply reply = new Reply(id, forumPicture, thread, createdDate, 
+////				title, replyContent, floor, boards, reports)
+//		Reply reply = new Reply();
+////		reply.setForumPictures(forumPictures);
+//		reply.setThread(thread);
+//		reply.setTitle(title);
+//		reply.setCreatedDate(new java.util.Date());
+//		reply.setFloor(reply.getFloor()+1);
+//		replyDao.save(reply);
+//		return 1;
+//	}
 	
 	@Transactional
 	public List<Reply> getReplyByCreatedTime(){
