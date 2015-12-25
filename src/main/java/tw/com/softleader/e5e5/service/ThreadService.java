@@ -34,8 +34,8 @@ public class ThreadService {
 		thread.setReplyCount(0);
 		thread.setIsReadonly('F');
 		thread.setTopped('F');
-		thread.setForumPictures(forumPictures);
-		thread.setThreadTags(threadTags);		
+//		thread.setForumPictures(forumPictures);
+//		thread.setThreadTags(threadTags);		
 		threadDao.save(thread);
 		return 1;
 	}

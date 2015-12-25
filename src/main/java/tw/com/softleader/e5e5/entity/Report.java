@@ -15,6 +15,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonIgnoreType;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -68,7 +69,7 @@ public class Report implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "admin_id")
-	@JsonIgnoreType(Report="")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	public Admin getAdmin() {
 		return this.admin;
 	}
@@ -79,6 +80,7 @@ public class Report implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_id")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	public Product getProduct() {
 		return this.product;
 	}
@@ -89,6 +91,7 @@ public class Report implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "reply_id")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	public Reply getReply() {
 		return this.reply;
 	}
@@ -99,6 +102,7 @@ public class Report implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "thread_id")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	public Thread getThread() {
 		return this.thread;
 	}
@@ -109,6 +113,7 @@ public class Report implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "reporter_id")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	public User getUser() {
 		return this.user;
 	}

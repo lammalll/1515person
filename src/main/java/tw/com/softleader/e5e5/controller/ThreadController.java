@@ -75,15 +75,15 @@ public class ThreadController {
 //		return "/thread/add";
 //	}
 
-	@RequestMapping(value = "/insert")
-	public String insert(Model model, @ModelAttribute Thread thread) {
-		int result = threadService.createThread(thread.getBoard(), null ,thread.getTitle(),
-				thread.getThreadContent(), thread.getThreadTags(), null);
-		if (result == 1) {
-			model.addAttribute("message", "新增成功");
-		} else {
-			model.addAttribute("message", "新增失敗");
-		}
-		return "/thread/add";
-	}
+//	@RequestMapping(value = "/insert")
+//	public String insert(Model model, @ModelAttribute Thread thread) {
+//		int result = threadService.createThread(thread.getBoard(), null ,thread.getTitle(),
+//				thread.getThreadContent(), thread.getThreadTags(), null);
+//		if (result == 1) {
+//			model.addAttribute("message", "新增成功");
+//		} else {
+//			model.addAttribute("message", "新增失敗");
+//		}
+//		return "/thread/add";
+//	}
 }

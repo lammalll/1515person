@@ -28,7 +28,7 @@ public class BoardCategoria implements java.io.Serializable {
 	private int id;
 	private String name;
 	private Date createdDate;
-	private Set<Board> boards = new HashSet<Board>(0);
+//	private Set<Board> boards = new HashSet<Board>(0);
 
 	public BoardCategoria() {
 	}
@@ -38,11 +38,13 @@ public class BoardCategoria implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public BoardCategoria(int id, String name, Date createdDate, Set<Board> boards) {
+	public BoardCategoria(int id, String name, Date createdDate
+//			, Set<Board> boards
+			) {
 		this.id = id;
 		this.name = name;
 		this.createdDate = createdDate;
-		this.boards = boards;
+//		this.boards = boards;
 	}
 
 	@Id
@@ -75,15 +77,15 @@ public class BoardCategoria implements java.io.Serializable {
 		this.createdDate = createdDate;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "boardCategoria"
-			,cascade={ CascadeType.REMOVE})
-	public Set<Board> getBoards() {
-		return this.boards;
-	}
-
-	public void setBoards(Set<Board> boards) {
-		this.boards = boards;
-	}
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "boardCategoria"
+//			,cascade={ CascadeType.REMOVE})
+//	public Set<Board> getBoards() {
+//		return this.boards;
+//	}
+//
+//	public void setBoards(Set<Board> boards) {
+//		this.boards = boards;
+//	}
 
 	@Override
 	public String toString() {

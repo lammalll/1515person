@@ -30,8 +30,6 @@ public class Board implements java.io.Serializable {
 	private int id;
 	private BoardCategoria boardCategoria;
 	// private BoardCategory boardCategory;
-	private Reply reply;
-	private Thread thread;
 	private Date createdDate;
 	private String name;
 	private String description;
@@ -41,8 +39,8 @@ public class Board implements java.io.Serializable {
 	private Character isCream;
 	private Character isHide;
 	private String picture;
-	private Set<UserOwner> userOwners = new HashSet<UserOwner>(0);
-	private Set<Thread> threads = new HashSet<Thread>(0);
+//	private Set<UserOwner> userOwners = new HashSet<UserOwner>(0);
+//	private Set<Thread> threads = new HashSet<Thread>(0);
 
 	public Board() {
 	}
@@ -61,14 +59,13 @@ public class Board implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public Board(int id, BoardCategoria boardCategoria, Reply reply, Thread thread, Date createdDate, String name,
-			String description, Integer threadCount, Integer replyCount, Character isCream, String picture,
-			Set<UserOwner> userOwners, Set<Thread> threads) {
+	public Board(int id, BoardCategoria boardCategoria, Date createdDate, String name,
+			String description, Integer threadCount, Integer replyCount, Character isCream, String picture
+//			,Set<UserOwner> userOwners, Set<Thread> threads
+			) {
 		this.id = id;
 		this.boardCategoria = boardCategoria;
 		// this.boardCategory = boardCategory;
-		this.reply = reply;
-		this.thread = thread;
 		this.createdDate = createdDate;
 		this.name = name;
 		this.description = description;
@@ -76,8 +73,8 @@ public class Board implements java.io.Serializable {
 		this.replyCount = replyCount;
 		this.isCream = isCream;
 		this.picture = picture;
-		this.userOwners = userOwners;
-		this.threads = threads;
+//		this.userOwners = userOwners;
+//		this.threads = threads;
 	}
 
 	@Id
@@ -112,25 +109,6 @@ public class Board implements java.io.Serializable {
 	// this.boardCategory = boardCategory;
 	// }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "last_reply_id")
-	public Reply getReply() {
-		return this.reply;
-	}
-
-	public void setReply(Reply reply) {
-		this.reply = reply;
-	}
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "last_thread_id")
-	public Thread getThread() {
-		return this.thread;
-	}
-
-	public void setThread(Thread thread) {
-		this.thread = thread;
-	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "created_date", length = 23)
@@ -196,26 +174,26 @@ public class Board implements java.io.Serializable {
 		this.picture = picture;
 	}
 
-	// 刪Board刪版主們
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "board", cascade = { CascadeType.REMOVE })
-	@Transactional
-	public Set<UserOwner> getUserOwners() {
-		return this.userOwners;
-	}
-
-	public void setUserOwners(Set<UserOwner> userOwners) {
-		this.userOwners = userOwners;
-	}
-
-	// 刪Board刪所有Threads
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "board", cascade = { CascadeType.REMOVE })
-	public Set<Thread> getThreads() {
-		return this.threads;
-	}
-
-	public void setThreads(Set<Thread> threads) {
-		this.threads = threads;
-	}
+//	// 刪Board刪版主們
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "board", cascade = { CascadeType.REMOVE })
+//	@Transactional
+//	public Set<UserOwner> getUserOwners() {
+//		return this.userOwners;
+//	}
+//
+//	public void setUserOwners(Set<UserOwner> userOwners) {
+//		this.userOwners = userOwners;
+//	}
+//
+//	// 刪Board刪所有Threads
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "board", cascade = { CascadeType.REMOVE })
+//	public Set<Thread> getThreads() {
+//		return this.threads;
+//	}
+//
+//	public void setThreads(Set<Thread> threads) {
+//		this.threads = threads;
+//	}
 
 	@Override
 	public String toString() {
